@@ -6,8 +6,10 @@ echo "Django Configuration"
 
 # prepare init migration
 echo "prepare init migration"
+
 source /code/dev.env
 python /code/manage.py makemigrations
+
 # migrate db, so we have the latest db schema
 echo "migrate db"
 python /code/manage.py migrate
