@@ -6,8 +6,7 @@ from decimal import Decimal
 from django.core.validators import (MinLengthValidator, MinValueValidator)
 
 
-# Create your models here.
-class Inventory():
+class Inventory(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=50, validators=[MinLengthValidator(3)],
                             help_text='Name of Inventory')
