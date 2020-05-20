@@ -19,16 +19,18 @@ from rest_framework.documentation import include_docs_urls
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_nested import routers
 
+from api.restful.viewset import InventoryViewSet
+
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
-# router.register(r'campaign', CampaignViewSet)
+router.register(r'inventory', InventoryViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 
 urlpatterns = [
     re_path('^api/', include(router.urls)),
-    re_path('^docs/', include_docs_urls(title='IDSO APIs',
+    re_path('^docs/', include_docs_urls(title='INVENTORY APIs',
                                         authentication_classes=[
                                             BasicAuthentication],
                                         permission_classes=[IsAuthenticated])),

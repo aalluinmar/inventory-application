@@ -143,7 +143,7 @@ REST_FRAMEWORK = {
     'rest_framework.pagination.LimitOffsetPagination',
         'PAGE_SIZE': 100,
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
@@ -179,7 +179,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': os.getenv('DJANGO_LOG_PATH', './idso.log'),
+            'filename': os.getenv('DJANGO_LOG_PATH', './inventory.log'),
             'when': 'midnight',  # this specifies the interval
             'interval': 1,  # defaults to 1, only necessary for other values
             'backupCount': 30,  # how many backup file to keep, 10 days
