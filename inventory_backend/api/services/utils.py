@@ -23,8 +23,8 @@ def image_validation(image):
             default_extension)
         return msg
     if width > max_width or height > max_height:
-        msg = 'Height x Width must not exceed `{0} x {1}`'.format(
-            max_height, max_width)
+        msg = ('Width x Height `({0} x {1})` must not exceed `{2} x {3}`'
+               .format(width, height, max_height, max_width))
         return msg
-    return msg
     logger.info(" Image_validation ended")
+    return msg
