@@ -23,6 +23,12 @@
 
     docker-compose up --build
 
+### List of INVENTORY API's
+
+- API Docs need Basic Authentication, so we need provide basic username (admin) and password (admin@123).
+
+    http://localhost:8000/docs/
+
 # Contributors
 
 Allu Aravind <alluaravind1313@gmail.com>
