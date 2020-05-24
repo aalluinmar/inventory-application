@@ -1,13 +1,28 @@
 <template>
-  <div class="home">
-  </div>
+	<div>
+		<div>
+			<navigation></navigation>
+			<router-view></router-view>
+		</div>
+	</div>
 </template>
-
 <script>
-
+import Navigation from './Navigation';
+import { mapState } from 'vuex';
 export default {
-  name: 'Home',
-  components: {
-  }
-}
+	components: {
+    	Navigation
+	},
+	data() {
+		return {
+			msg: 'I am a Base Component',
+		};
+	},
+	async created() {
+	},
+	methods: {
+	}
+};
 </script>
+<style lang="stylus" scoped>
+</style>
