@@ -9,6 +9,7 @@
 <script>
 import Navigation from './Navigation';
 import { mapState } from 'vuex';
+import { API } from '@/api';
 export default {
 	components: {
     	Navigation
@@ -19,7 +20,14 @@ export default {
 		};
 	},
 	async created() {
-		this.$router.push('/inventory');
+		await API.Inventory.getInventory().then(res => {
+			this.$store.dispatch('inventory/getAllInventories')
+			this.$Message.success('Items Loaded Successfully');
+			this.$router.push('/inventory').catch(e => {})
+		}).catch(err => {
+			console.log(err)
+			this.$Message.error('Items Initiation Failed');
+		})
 	},
 	methods: {
 	}

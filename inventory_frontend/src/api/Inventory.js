@@ -4,7 +4,6 @@ const endpoint = '/api/inventory/';
 
 export class Inventory {
 	static getInventory() {
-		console.log(endpoint)
 		return APIFetch.get(`${endpoint}`);
     }
     static readInventoryId() {

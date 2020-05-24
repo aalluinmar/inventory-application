@@ -1,17 +1,25 @@
 <template>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navigation">
 		<div class="container-fluid">
-			<span class="navbar-header">
-				<img src="../assets/title_image.png" height="60px" class="" alt="Inventory App">
-			</span>
-			<div class="navbar-header">
-				<h6 class="navbar-brand">Sadguru's Amrit-Tulya - Tea Shop</h6>
+			<div class="row">
+				<div class="col-1 pb-1">
+					<span class="inm-diagonal-white">
+						<img src="../assets/title_image.png" height="64px" class="" alt="Inventory App">
+					</span>
+				</div>
+                <div class="col-3 pl-0"><p></p>
+                    <span class="navbar-brand">Sadguru's Amrit-Tulya - Tea Shop</span>
+                </div>
+				<div class="col-4 text-center inventory">
+					<ul>
+						<li>
+							<router-link  to="/inventory"><p>HOME</p></router-link>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<ul class="nav navbar-nav" id="inventory">
-				<li><router-link  to="/inventory"><p style="color:white; font-weight: bold; font-size:14px;">HOME</p></router-link></li>
-			</ul>
 		</div>
-	</nav>
+    </div>
 </template>
 <script>
 export default {
@@ -37,22 +45,22 @@ navbar-bg-color = #02AEDA
 font-size = 14px
 model-color = #E7ECF1
 //styles
-.navbar
-	height 60px
+.navigation
+	height 65px
 	background-color #C46210
 	color #ffffff
 	position sticky 
 	top 0px
 	z-index 999
 	img 
-		padding 6px
-		padding-left 18px
+		padding 5px
+		padding-left 20px
 	&:before
 		content: "";
 		position: absolute;
 		top: 0;
-		left: 14px;
-		width: 370px
+		left: 13px;
+		width: 450px
 		height: 100%;
 		background: #fff;
 		z-index: -1;
@@ -62,13 +70,35 @@ model-color = #E7ECF1
 		color #AB274F
 		font-family fantasy;
 		font-weight bold
+        padding 17px 0px
+        vertical-align middle
 	#inventory
 		color #ffffff
-		// margin -42px
         font-size 14px
 		padding 6px 10px
 		font-weight bold
 		background-color white-space nowrap
+.inventory ul
+	list-style-type none 
+	padding 0px
+	margin 0px
+	li	
+		height 60px
+		a
+			font-size 14px
+			font-weight 500
+			line-height 60px
+			color #FFFFFF
+			border none
+			font-family: 'BentonSans bold';
+		p
+			font-size 20px
+			font-weight 400
+			line-height 20px
+			margin-top 20px
+			// padding-right 10px
+			font-family: 'BentonSans';
+			color #fff
 	// padding 0px
 	// height 70px
 	// font-size 20px

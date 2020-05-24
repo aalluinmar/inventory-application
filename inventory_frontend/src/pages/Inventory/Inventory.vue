@@ -1,26 +1,11 @@
 <template>
-  <div class="text-center">
-      <h1>{{allInventoryList}}</h1>
-  </div>
+ <div class="container mt-100">
+    <!-- heading -->
+    <div class="mb-4">
+      <h4 class="p-bottom-1">List of Items</h4>
+      <div class="border-line"></div>
+    </div>
+ </div>
 </template>
-<script>
-import { mapState } from 'vuex';
-export default {
-	data() {
-		return {
-		};
-	},
-	created() {
-	},
-	computed: {
-		...mapState({
-			allInventoryList: state => state.inventory.getAllInventories,
-		})
-	},
-	methods: {
-		
-	}
-};
-</script>
-<style>
-</style>
+<script src="./Inventory.js"></script>
+<style src="./Inventory-stylus.styl" lang="stylus" scoped></style>
