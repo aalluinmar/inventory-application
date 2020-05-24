@@ -10,6 +10,8 @@ export default {
 		return {
 		};
 	},
+	created() {
+	},
 	computed: {
 		...mapState({
 			allInventoryList: state => state.inventory.getAllInventories,
