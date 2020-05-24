@@ -19,6 +19,7 @@ export default {
 		};
 	},
 	async created() {
+		this.$router.push('/inventory');
 	},
 	methods: {
 	}

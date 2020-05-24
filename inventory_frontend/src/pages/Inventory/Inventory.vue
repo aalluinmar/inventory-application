@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-      <h1>ahaiaiai</h1>
+      <h1>{{allInventoryList}}</h1>
   </div>
 </template>
 <script>
@@ -9,6 +9,11 @@ export default {
 	data() {
 		return {
 		};
+	},
+	computed: {
+		...mapState({
+			allInventoryList: state => state.inventory.getAllInventories,
+		})
 	},
 	methods: {
 		

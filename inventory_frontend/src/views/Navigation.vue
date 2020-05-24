@@ -8,13 +8,12 @@
 				<h6 class="navbar-brand">Sadguru's Amrit-Tulya - Tea Shop</h6>
 			</div>
 			<ul class="nav navbar-nav" id="inventory">
-				<li><router-link  to="/inventory"><p style="color:white;">HOME</p></router-link></li>
+				<li><router-link  to="/inventory"><p style="color:white; font-weight: bold; font-size:14px;">HOME</p></router-link></li>
 			</ul>
 		</div>
 	</nav>
 </template>
 <script>
-import { mapState } from 'vuex';
 export default {
 	components: {
 	},
@@ -24,11 +23,6 @@ export default {
 		};
 	},
 	computed: {
-		...mapState({
-			// tenantdata: state => state.tenant.profileData,
-			// activeTenant: state => state.tenant.activeTenant,
-			// getProfile: state => state.tenant.getProfile,
-		})
 	},
 	async created() {
 	},
@@ -71,7 +65,8 @@ model-color = #E7ECF1
 	#inventory
 		color #ffffff
 		// margin -42px
-		padding 8px 10px
+        font-size 14px
+		padding 6px 10px
 		font-weight bold
 		background-color white-space nowrap
 	// padding 0px
