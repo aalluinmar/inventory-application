@@ -18,9 +18,6 @@ export default {
 		};
 	},
 	methods: {
-		logout() {
-			this.$auth.logOut();
-		},
 	}
 };
 </script>
