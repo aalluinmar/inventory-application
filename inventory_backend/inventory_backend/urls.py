@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.urls import include, re_path
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.documentation import include_docs_urls
@@ -20,6 +21,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_nested import routers
 
 from api.restful.viewset import InventoryViewSet
+from django.conf.urls.static import static
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
@@ -35,4 +37,4 @@ urlpatterns = [
                                             BasicAuthentication],
                                         permission_classes=[IsAuthenticated])),
     re_path(r'^', include('health_check.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

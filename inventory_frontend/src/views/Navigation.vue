@@ -17,6 +17,8 @@
 						</li>
 					</ul>
 				</div>
+				<div class="col-4">
+				</div>
 			</div>
 		</div>
     </div>
@@ -75,19 +77,17 @@ model-color = #E7ECF1
 	#inventory
 		color #ffffff
         font-size 14px
-		padding 6px 10px
 		font-weight bold
 		background-color white-space nowrap
 .inventory ul
 	list-style-type none 
 	padding 0px
 	margin 0px
-	li	
-		height 60px
+	li
 		a
 			font-size 14px
 			font-weight 500
-			line-height 60px
+			// line-height 6px
 			color #FFFFFF
 			border none
 			font-family: 'BentonSans bold';
@@ -99,15 +99,5 @@ model-color = #E7ECF1
 			// padding-right 10px
 			font-family: 'BentonSans';
 			color #fff
-	// padding 0px
-	// height 70px
-	// font-size 20px
-	// align-items center
-	// padding 30px
-	// font-weight 500
-	// line-height 60px
-	// color #FFFFFF
-	// border none
-	// font-family: 'BentonSans bold';
 
 </style>
