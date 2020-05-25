@@ -7,7 +7,7 @@
 	<!-- Inventory Add button -->
 	<div class="container">
 		<div class="campaign-button">
-			<button><img src="@/assets/add.svg"> New Item</button>
+			<button @click="closeInvent = true"><img src="@/assets/add.svg"> New Item</button>
 		</div>
 	</div>
 	<div class="clearfix"></div>
@@ -55,6 +55,9 @@
 			</div>
 		</div>
 	</div>
+   <div v-if="closeInvent">
+      <CreateInventory :createBoolean="closeInvent"></CreateInventory>
+   </div>
  </div>
 </template>
 <script src="./Inventory.js"></script>
