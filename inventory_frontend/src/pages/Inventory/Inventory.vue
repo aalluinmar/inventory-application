@@ -55,7 +55,6 @@
 			</div>
 		</div>
 	</div>
-	{{closeInvent}}
    <div v-if="closeInvent">
       <CreateInventory :createBoolean="closeInvent" v-on:closeInventories="closeInventories"></CreateInventory>
    </div>
