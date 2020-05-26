@@ -4,7 +4,7 @@ const MAX_HEIGHT = 800;
 
 export default {
     name: 'CreateInventory',
-    props: ['createBoolean'],
+    props: ['createBoolean', 'inventoryType', 'inventoryData'],
     data() {
 		return {
             name: '',
@@ -28,7 +28,12 @@ export default {
 		};
 	},
 	async created() {
-        console.log(this.createBoolean)
+        if(this.inventoryType === 'update') {
+            this.name = this.inventoryType.name
+            this.price = this.inventoryType.price
+            this.description = this.inventoryType.description
+            this.image = this.inventoryType.image
+        }
 	},
 	computed: {
 	},
@@ -89,13 +94,74 @@ export default {
 			}
             return error
         },
+        async updateInventory(payload) {
+            let formData = new FormData()
+            formData.append('name', payload.name)
+            formData.append('price', payload.price)
+            formData.append('description', payload.description)
+            formData.append('image', payload.image, payload.image.name)
+            await API.Inventory.updateInventory(payload.id, formData).then(res => {
+				if(res.status === 200) {
+                    this.$store.dispatch('inventory/getAllInventories')
+                    this.$Notice.success({
+                        title: 'Update Inventory Success.',
+                        desc: "Successfully updated Item in Inventory List."
+                    });
+                    this.close();
+				}
+			}).catch(err => {
+                this.$Notice.error({
+                    title: 'Update Inventory Failed',
+                    desc: "Updating Item to Inventory List Failed."
+                });
+            })
+        },
+        updateInvent() {
+            this.cleanErrorPayload()
+            if(this.formValidation()) {
+                let payload = {
+                    id: this.inventoryData.id,
+                    name: this.name,
+                    price: this.price,
+                    description: this.description,
+                    image: this.file
+                }
+                this.createInventory(payload)
+            }
+        },
+        async createInventory(payload) {
+            let formData = new FormData()
+            formData.append('name', payload.name)
+            formData.append('price', payload.price)
+            formData.append('description', payload.description)
+            formData.append('image', payload.image, payload.image.name)
+            await API.Inventory.createInventory(formData).then(res => {
+				if(res.status === 201) {
+                    this.$store.dispatch('inventory/getAllInventories')
+                    this.$Notice.success({
+                        title: 'Create Inventory Success.',
+                        desc: "Successfully added Item to Inventory List."
+                    });
+                    this.close();
+				}
+			}).catch(err => {
+                this.$Notice.error({
+                    title: 'Create Inventory Failed',
+                    desc: "Adding Item to Inventory List Failed."
+                });
+            })
+        },
 		createInvent() {
             this.cleanErrorPayload()
-            console.log("-------")
             if(this.formValidation()) {
-                console.log("success.")
+                let payload = {
+                    name: this.name,
+                    price: this.price,
+                    description: this.description,
+                    image: this.file
+                }
+                this.createInventory(payload)
             }
-            // this.close();
         },
         close() {
             this.$emit('closeInventories');
