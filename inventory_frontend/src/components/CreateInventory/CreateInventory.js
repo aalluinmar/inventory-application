@@ -29,10 +29,10 @@ export default {
 	},
 	async created() {
         if(this.inventoryType === 'update') {
-            this.name = this.inventoryType.name
-            this.price = this.inventoryType.price
-            this.description = this.inventoryType.description
-            this.image = this.inventoryType.image
+            this.name = this.inventoryData.name
+            this.price = this.inventoryData.price
+            this.description = this.inventoryData.description
+            this.inventoryimage = this.inventoryData.image
         }
 	},
 	computed: {
