@@ -104,14 +104,14 @@ export default {
 				if(res.status === 200) {
                     this.$store.dispatch('inventory/getAllInventories')
                     this.$Notice.success({
-                        title: 'Update Inventory Success.',
+                        title: 'Updated Inventory Success.',
                         desc: "Successfully updated Item in Inventory List."
                     });
                     this.close();
 				}
 			}).catch(err => {
                 this.$Notice.error({
-                    title: 'Update Inventory Failed',
+                    title: 'Updating Inventory Failed',
                     desc: "Updating Item to Inventory List Failed."
                 });
             })
@@ -139,14 +139,14 @@ export default {
 				if(res.status === 201) {
                     this.$store.dispatch('inventory/getAllInventories')
                     this.$Notice.success({
-                        title: 'Create Inventory Success.',
+                        title: 'Created Inventory Success.',
                         desc: "Successfully added Item to Inventory List."
                     });
                     this.close();
 				}
 			}).catch(err => {
                 this.$Notice.error({
-                    title: 'Create Inventory Failed',
+                    title: 'Creating Inventory Failed',
                     desc: "Adding Item to Inventory List Failed."
                 });
             })

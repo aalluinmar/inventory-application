@@ -28,7 +28,6 @@ export default {
                         title: 'Deleting Inventory Success.',
                         desc: "Successfully deleted Item from Inventory List."
                     });
-                    this.close();
 				}
 			}).catch(err => {
                 this.$Notice.error({
