@@ -14,13 +14,21 @@ const router = new VueRouter({
 			component: Home,
 			children: [
 				{
-          path: "inventory",
-          name: "inventory",
-          component: () =>
-            import(
-              "../pages/Inventory/Inventory.vue"
-            )
-        },
+					path: "inventory",
+					name: "inventory",
+					component: () =>
+						import(
+						"../pages/Inventory/Inventory.vue"
+						)
+				},
+				{
+					path: "/viewinventory",
+					name: "viewinventory",
+					component: () =>
+						import(
+						"../components/CreateInventory/CreateInventory.vue"
+						),
+				},
 			]
 		}
 	]

@@ -33,6 +33,11 @@ export default {
             this.price = this.inventoryData.price
             this.description = this.inventoryData.description
             this.inventoryimage = this.inventoryData.image
+        } else if(this.inventoryType === 'view') {
+            this.name = this.inventoryData.name
+            this.price = this.inventoryData.price
+            this.description = this.inventoryData.description
+            this.inventoryimage = this.inventoryData.image
         }
 	},
 	computed: {

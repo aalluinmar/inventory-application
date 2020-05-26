@@ -36,6 +36,10 @@ export default {
                 });
             })
 		},
+		viewInventory(item) {
+			
+			this.$router.push('/viewinventory')
+		},
 		closeInventories() {
 			this.closeInvent = false;
 		},

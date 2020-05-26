@@ -42,7 +42,9 @@
 									</a>
 								</Tooltip>
 								<Tooltip content="View Inventory" placement="top">
-									<a style="padding-right:10px"><img src="../../assets/view_icon.svg" class="img-fluid" alt=""></a>
+									<a style="padding-right:10px" @click="viewInventory(item)">
+										<img src="../../assets/view_icon.svg" class="img-fluid" alt="">
+									</a>
 								</Tooltip>
 								<Tooltip content="Delete Inventory" placement="top">
 									<a style="padding:10px" @click="deleteInventory(item.id)">
