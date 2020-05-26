@@ -16,7 +16,7 @@ class InventorySerializer(serializers.ModelSerializer):
         delete.
     """
 
-    def validation_name(self, data):
+    def validate_name(self, data):
         if not check_alpha_exists(data):
             msg = ("Name `{0}` must contain atleast one letter".format(data))
             logger.error(msg)

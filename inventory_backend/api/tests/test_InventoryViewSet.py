@@ -87,7 +87,7 @@ class InventoryViewSet(TestCase):
         """
         actual = "Ensure that Image format should be `['png', 'jpg', 'jpeg']`"
         payload = {
-            "name": "Abcd",
+            "name": "1234",
             "description": "Abcdefgh",
             "price": 1.0,
             "image": self.generate_photo_file('testInventoryViewSet',
