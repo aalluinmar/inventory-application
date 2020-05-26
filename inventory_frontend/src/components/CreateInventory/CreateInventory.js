@@ -126,7 +126,7 @@ export default {
                     description: this.description,
                     image: this.file
                 }
-                this.createInventory(payload)
+                this.updateInventory(payload)
             }
         },
         async createInventory(payload) {
