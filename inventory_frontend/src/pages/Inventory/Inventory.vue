@@ -7,7 +7,7 @@
 	<!-- Inventory Add button -->
 	<div class="container">
 		<div class="inventory-button">
-			<button @click="closeInvent = true"><img src="@/assets/add.svg">Add</button>
+			<button @click="closeInvent = true, inventoryTypeDetail = 'create', inventPropData = ''"><img src="@/assets/add.svg">Add</button>
 		</div>
 	</div>
 	<div class="clearfix"></div>
@@ -37,7 +37,9 @@
 						<td>
 							<div>
 								<Tooltip content="Update Inventory" placement="top">
-									<a style="padding-right:10px"><img src="../../assets/edit-image.svg" class="img-fluid" alt=""></a>
+									<a style="padding-right:10px" @click="closeInvent = true, inventoryTypeDetail = 'update', inventPropData = item">
+										<img src="../../assets/edit-image.svg" class="img-fluid" alt="">
+									</a>
 								</Tooltip>
 								<Tooltip content="View Inventory" placement="top">
 									<a style="padding-right:10px"><img src="../../assets/view_icon.svg" class="img-fluid" alt=""></a>
@@ -56,7 +58,7 @@
 		</div>
 	</div>
    <div v-if="closeInvent">
-      <CreateInventory :createBoolean="closeInvent" v-on:closeInventories="closeInventories"></CreateInventory>
+      <CreateInventory :createBoolean="closeInvent" :inventoryType="inventoryTypeDetail" :inventoryData="inventPropData" v-on:closeInventories="closeInventories"></CreateInventory>
    </div>
  </div>
 </template>

@@ -22,11 +22,17 @@ export default {
 	async created() {
 		await API.Inventory.getInventory().then(res => {
 			this.$store.dispatch('inventory/getAllInventories')
-			this.$Message.success('Items Loaded Successfully');
+			this.$Notice.success({
+				title: 'Listing Items Inventory',
+				desc: "Items Loaded Successfully."
+			});
 			this.$router.push('/inventory').catch(e => {})
 		}).catch(err => {
 			console.log(err)
-			this.$Message.error('Items Initiation Failed');
+			this.$Notice.error({
+				title: 'Listing Items Inventory',
+				desc: "Items Initiation Failed."
+			});
 		})
 	},
 	methods: {

@@ -8,7 +8,8 @@
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">Add Items</h5>
+                    <h5 class="modal-title" v-if="inventoryType === 'create'">Add Items</h5>
+                    <h5 class="modal-title" v-if="inventoryType === 'update'">Update Item</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true" @click="close()">&times;</span>
                     </button>
@@ -26,7 +27,8 @@
                           </div>
                           <div class="mb-30"><br>
                             <label>PRICE<sup class="err">*</sup></label>
-                            <Input v-model="price" placeholder="Enter price" style="width: 200px" />
+                            <Input v-model="price" placeholder="Enter price" style="width: 200px"
+                            onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46" />
                             <transition name="fade">
                               <div class="err">{{errorpayload.price}}</div>
                             </transition>
@@ -41,10 +43,7 @@
                         </div>
                         <div class="col-6 p-50">
                           <label>IMAGE</label><sup class="err">*</sup>
-                          <div v-if="inventoryimage" class="text-center p-3 ivu-upload-drag">
-                            <img :src="inventoryimage" width="130px" height="130px">
-                          </div>
-                          <Upload v-else
+                          <Upload
                             type="drag"
                             accept="image/png, image/jpeg, image/jpg"
                             :before-upload="selectedFile"
@@ -68,7 +67,8 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" @click="close()">Close</button>
-                    <button type="button" class="btn btn-primary" @click="createInvent">Save changes</button>
+                    <button type="button" class="btn btn-primary" v-if="inventoryType === 'create'" @click="createInvent">SAVE</button>
+                    <button type="button" class="btn btn-primary" v-if="inventoryType === 'update'" @click="updateInvent">Update</button>
                   </div>
                 </div>
               </div>

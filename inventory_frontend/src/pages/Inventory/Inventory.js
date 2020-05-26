@@ -7,6 +7,8 @@ export default {
 	data() {
 		return {
 			closeInvent: false,
+			inventoryTypeDetail: '',
+			inventPropData: '',
 		};
 	},
 	async created() {

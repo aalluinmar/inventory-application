@@ -14,5 +14,5 @@ class InventoryViewSet(viewsets.ModelViewSet):
         Invokes ModelViewSet to perform all CRUD operations.
     """
 
-    queryset = Inventory.objects.all()
+    queryset = Inventory.objects.all().order_by('name')
     serializer_class = InventorySerializer
