@@ -21,14 +21,6 @@ const router = new VueRouter({
 						"../pages/Inventory/Inventory.vue"
 						)
 				},
-				{
-					path: "/viewinventory",
-					name: "viewinventory",
-					component: () =>
-						import(
-						"../components/CreateInventory/CreateInventory.vue"
-						),
-				},
 			]
 		}
 	]
