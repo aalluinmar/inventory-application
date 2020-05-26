@@ -6,8 +6,8 @@
     </div>
 	<!-- Inventory Add button -->
 	<div class="container">
-		<div class="campaign-button">
-			<button @click="closeInvent = true"><img src="@/assets/add.svg"> New Item</button>
+		<div class="inventory-button">
+			<button @click="closeInvent = true"><img src="@/assets/add.svg">Add</button>
 		</div>
 	</div>
 	<div class="clearfix"></div>
@@ -55,8 +55,9 @@
 			</div>
 		</div>
 	</div>
+	{{closeInvent}}
    <div v-if="closeInvent">
-      <CreateInventory :createBoolean="closeInvent"></CreateInventory>
+      <CreateInventory :createBoolean="closeInvent" v-on:closeInventories="closeInventories"></CreateInventory>
    </div>
  </div>
 </template>

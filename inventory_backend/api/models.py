@@ -43,6 +43,7 @@ class Inventory(Audit):
     name = models.CharField(max_length=50, validators=[MinLengthValidator(3)],
                             help_text='Name of Inventory')
     description = models.CharField(max_length=1440,
+                                   validators=[MinLengthValidator(3)],
                                    help_text='Inventory description')
     price = models.DecimalField(
         max_digits=8, decimal_places=2, help_text='Price of the Inventory',
