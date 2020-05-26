@@ -42,7 +42,7 @@
 									</a>
 								</Tooltip>
 								<Tooltip content="View Inventory" placement="top">
-									<a style="padding-right:10px" @click="viewInventory(item)">
+									<a style="padding-right:10px" @click="closeInvent = true, inventoryTypeDetail = 'view', inventPropData = item">
 										<img src="../../assets/view_icon.svg" class="img-fluid" alt="">
 									</a>
 								</Tooltip>

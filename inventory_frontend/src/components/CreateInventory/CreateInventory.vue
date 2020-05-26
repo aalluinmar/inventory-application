@@ -10,6 +10,7 @@
                   <div class="modal-header">
                     <h5 class="modal-title" v-if="inventoryType === 'create'">Add Items</h5>
                     <h5 class="modal-title" v-if="inventoryType === 'update'">Update Item</h5>
+                    <h5 class="modal-title" v-if="inventoryType === 'view'">View Item</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true" @click="close()">&times;</span>
                     </button>
@@ -20,22 +21,26 @@
                         <div class="col-6 br-1 p-50">
                           <div class="mb-30">
                             <label>NAME<sup class="err">*</sup></label>
-                            <Input v-model="name" :maxlength="50" show-word-limit placeholder="Enter Name" style="width: 200px" />
+                            <Input v-if="inventoryType !== 'view'" v-model="name" :maxlength="50" show-word-limit placeholder="Enter Name" style="width: 200px" />
+                            <h5 v-if="inventoryType === 'view'" style="font-weight:200;">{{name}}</h5>
                             <transition name="fade">
                               <div class="err">{{errorpayload.name}}</div>
                             </transition>
                           </div>
                           <div class="mb-30"><br>
                             <label>PRICE<sup class="err">*</sup></label>
-                            <Input v-model="price" placeholder="Enter price" style="width: 200px"
+                            <Input v-model="price" placeholder="Enter price" style="width: 200px" v-if="inventoryType !== 'view'"
                             onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 46" />
+                            <h5 v-if="inventoryType === 'view'" style="font-weight:200;">{{price}}</h5>
                             <transition name="fade">
                               <div class="err">{{errorpayload.price}}</div>
                             </transition>
                           </div>
                           <div class="mb-30"><br>
                             <label>DESCRIPTION</label><sup class="err">*</sup>
-                            <Input v-model="description" :maxlength="1440" show-word-limit type="textarea" placeholder="Enter Description..." style="width: 200px" />
+                            <Input v-model="description" :maxlength="1440" show-word-limit type="textarea" v-if="inventoryType !== 'view'"
+                             placeholder="Enter Description..." style="width: 200px" />
+                            <p v-if="inventoryType === 'view'" style="font-weight:200;">{{description}}</p>
                             <transition name="fade">
                               <div class="err">{{errorpayload.description}}</div>
                             </transition>
@@ -43,7 +48,10 @@
                         </div>
                         <div class="col-6 p-50">
                           <label>IMAGE</label><sup class="err">*</sup>
-                          <Upload
+                          <div v-if="inventoryimage && inventoryType === 'view'" class="text-center p-3 ivu-upload-drag">
+                            <img :src="inventoryimage" width="130px" height="140px">
+                          </div>
+                          <Upload v-else
                             type="drag"
                             accept="image/png, image/jpeg, image/jpg"
                             :before-upload="selectedFile"
