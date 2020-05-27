@@ -17,7 +17,7 @@
 
 ### Instructions
 
-    After configuring the docker desktop, then open terminal and redirect the `inventory_backend` folder.
+    After configuring the docker desktop, then open terminal and switch to `inventory_backend` directory.
     
 ### Migrate and load data using Docker Command
 
