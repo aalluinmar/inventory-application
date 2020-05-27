@@ -22,9 +22,9 @@
 
 ## Install Application Requirements for Development.
 
-    For Backend Setup, go through ([Backend README](https://github.com/aalluinmar/inventory-application/tree/master/inventory_backend))
+    For Backend Setup, go through ([backend](inventory_backend/README.md))
 
-    For Frontend Setup, go through ([Frontend README](https://github.com/aalluinmar/inventory-application/tree/master/inventory_frontend))
+    For Frontend Setup, go through ([frontend](inventory_frontend/README.md))
 
 ## Start App Server by using following Commands
 
