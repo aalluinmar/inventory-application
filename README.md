@@ -14,13 +14,13 @@
     sudo apt-get -y install git python-pip postgresql postgresql-contrib wkhtmltopdf libcurl4-openssl-dev libssl-dev xvfb
     sudo pip install virtualenv
 
-### Clone the code
+## Clone the code
 
     cd ~/
     git clone git@github.com:aalluinmar/inventory-application.git
     cd inventory-application
 
-### Install Application Requirements for Development.
+## Install Application Requirements for Development.
 
     For Backend Setup, go through ([Backend README](https://github.com/aalluinmar/inventory-application/tree/master/inventory_backend))
 
@@ -40,7 +40,7 @@
 
     `docker-compose up --build`
     
-    Open the Application using the host as ([localhost](http://localhost:8080/))
+- Open the Application using ([localhost](http://localhost:8080/))
 
 ## For Checking Backend Code Coverage and Unit Tests
 
@@ -70,7 +70,7 @@
 
     `coverage report -m --omit=manage.py`
 
-### In production server, Create virtual environment and activate and Install Application Requirements regarding Backend.
+## In production server, Create virtual environment and activate and Install Application Requirements regarding Backend.
 
 
     virtualenv -p python3 ~/env/inventory
@@ -80,6 +80,6 @@
 
     `Configure the supervisor inorder to make Containers up every time.`
 
-### In production server, Create virtual environment and activate and Install Application Requirements regarding Frontend.
+## In production server, Create virtual environment and activate and Install Application Requirements regarding Frontend.
 
     Install Node and Vue CLI Service and build the project for production environment setup and configure within the `S3` bucket.
