@@ -74,7 +74,7 @@
 
 
     virtualenv -p python3 ~/env/inventory
-    source ~/env/idso/bin/activate
+    source ~/env/inventory/bin/activate
     cd inventory_backend/
     pip3 install -r ./requirements/base.txt
 
