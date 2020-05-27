@@ -6,7 +6,7 @@
 
 - Vue.js
 - Python Django framework
-- PostgreSQL
+- PostgreSQL (download)[https://www.pgadmin.org/download/]
 
 ## Setup Development Environment
 
